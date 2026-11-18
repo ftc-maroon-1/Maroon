@@ -11,8 +11,8 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @Autonomous(name = "shoot, leave, collect, park")
 public class auto2 extends LinearOpMode {
-    public final int LAUNCHER_TARGET_VELOCITY = 1250; //2678 RPM
-    public final int LAUNCHER_MIN_VELOCITY = 1200; //2571 RPM
+    public final int LAUNCHER_TARGET_VELOCITY = 1100; //2678 RPM
+    public final int LAUNCHER_MIN_VELOCITY = 1000; //2571 RPM
 
     // 4-Wheel Mecanum Drive Configuration (No Sensors)
     private DcMotor leftFrontDrive = null;
@@ -140,15 +140,13 @@ public class auto2 extends LinearOpMode {
 
         waitForStart();
         shoot();
-        drive_forward(1.0, 300);
-        strafe_left(1.0, 800);
-        rotate_right(1, 1000);
-        drive_forward(1.0, 500);
-        collect(1, 10000);
-        drive_backward(1,300);
-        strafe_left(1,300);
-        drive_backward(1,800);
-        strafe_right(1,300);
+        drive_backward(1.0, 300);
+        strafe_right(1,600);
+        drive_forward(1,600);
+        collect(-1,3000);
+        drive_forward(1,100);
+        drive_backward(1,100);
+        drive_forward(1,100);
         stop_robot();
     }
 }

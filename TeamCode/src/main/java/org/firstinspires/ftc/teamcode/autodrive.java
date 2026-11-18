@@ -141,9 +141,9 @@ public void rotate_left(double power,long time) {
 
         waitForStart();
         shoot();
-        drive_forward(1.0, 300);
-        strafe_left(1.0, 800);
-        drive_forward(1.0, 850);
+        drive_backward(1.0, 300);
+        strafe_right(1.0, 700);
+        drive_backward(1.0, 500);
         stop_robot();
     }
 }
